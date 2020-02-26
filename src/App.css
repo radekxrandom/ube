@@ -13,6 +13,66 @@
   }
 }
 
+.nav2 {
+  font-size: 80%;
+}
+
+.divider {
+  margin: 1%;
+  border-bottom-style: solid;
+  position: absolute;
+  left: 20%;
+}
+
+.top {
+  margin-top: 5%;
+}
+
+.t {
+  position: absolute;
+}
+
+#bt0 {
+  left: 15%;
+}
+
+#bt1 {
+  right: 15%;
+}
+
+.mid {
+  left: 43.5%;
+}
+
+li {
+  list-style-type: none;
+  padding-left: 0;
+  display: inline-block;
+  margin-right: 3.5%;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+.navitem1 {
+  border-style: solid;
+  border-radius: 10px;
+  padding: 0.5%;
+}
+
+.navbar {
+  border-bottom-style: solid;
+  border-bottom-width: 1%;
+  border-bottom-color: orange;
+  margin-bottom: 2%;
+}
+
+.logo {
+  margin-left: 5%;
+  margin-right: 15%;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -32,6 +92,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
