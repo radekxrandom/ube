@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,6 +21,9 @@ const useStyles = makeStyles(theme => ({
 
 const Nav = props => {
   const classes = useStyles();
+  const showMenu = () => {
+    console.log("click");
+  };
 
   return (
     <>
@@ -50,6 +54,7 @@ const Nav = props => {
           >
             Kontakt
           </Button>
+          <MenuIcon className="hamb" onClick={showMenu} />
         </Toolbar>
       </AppBar>
     </>
