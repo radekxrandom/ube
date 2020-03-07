@@ -32,6 +32,7 @@ const Nav = props => {
           </Typography>
 
           <Button
+            className="bts"
             component={Link}
             to={"/quotation"}
             style={{ marginRight: "0.5%" }}
@@ -40,6 +41,7 @@ const Nav = props => {
             Uzyskaj wycene
           </Button>
           <Button
+            className="bts"
             component={Link}
             to={"/contact"}
             style={{ marginLeft: "0.5%" }}

@@ -3,6 +3,10 @@ import Nav from "./components/Nav";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import TextField from "@material-ui/core/TextField";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
 class Quotation extends Component {
   constructor(props) {
@@ -41,12 +45,14 @@ class Quotation extends Component {
       <>
         <Nav />
         <div className="article">
-          <div className="contform">
+          <div className="contform" style={{ marginTop: "5%" }}>
             <div className="contInfo">
               <h1>Uzyskaj wycene</h1>
               <div className="inf">
-                <span style={{ marginRight: "0.5%" }}>email@email.com</span>
-                <span>123456701</span>
+                <p style={{ marginTop: "-1%", marginBottom: "-1%" }}>
+                  Wypelnij formularz,
+                </p>
+                <p>a skontaktuje sie z toba i podam ci wycene.</p>
               </div>
             </div>
             <div className="mess">
@@ -63,7 +69,7 @@ class Quotation extends Component {
                   required
                   fullWidth
                   id="mobile"
-                  label="Mobile number"
+                  label="Imie"
                   name="mobile"
                   onChange={this.handleInputChange}
                   autoComplete="email"
@@ -81,7 +87,7 @@ class Quotation extends Component {
                   required
                   fullWidth
                   id="email"
-                  label="Your email address"
+                  label="Wiek"
                   name="email"
                   onChange={this.handleInputChange}
                   autoComplete="email"
@@ -105,24 +111,58 @@ class Quotation extends Component {
                   autoComplete="email"
                   autoFocus
                 />
-                <TextField
-                  style={{
-                    width: "35%",
-                    display: "block",
-                    margin: "auto",
-                    marginBottom: "1%"
-                  }}
+                <FormControl
                   variant="outlined"
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="choroba"
-                  label="Chorujesz na cos?"
-                  name="choroba"
-                  onChange={this.handleInputChange}
-                  autoComplete="email"
-                  autoFocus
-                />
+                  className="formcont"
+                  style={{
+                    marginBottom: "1%",
+                    width: "35%",
+                    textAlign: "right",
+                    backgroundColor: "#FCFCFC !important"
+                  }}
+                >
+                  <InputLabel id="demo-simple-select-outlined-label">
+                    Chorujesz na cos
+                  </InputLabel>
+                  <Select
+                    style={{ backgroundColor: "#FCFCFC !important" }}
+                    labelId="demo-simple-select-outlined-label"
+                    id="demo-simple-select-outlined"
+                    name="choroba"
+                    onChange={this.handleInputChange}
+                    labelWidth="30%"
+                  >
+                    <MenuItem value="tak">Tak</MenuItem>
+                    <MenuItem value={"nie"}>Nie</MenuItem>
+                  </Select>
+                </FormControl>
+                <br />
+                <FormControl
+                  variant="outlined"
+                  className="formcont"
+                  style={{
+                    marginBottom: "1%",
+                    width: "35%",
+                    textAlign: "right",
+                    backgroundColor: "#FCFCFC !important"
+                  }}
+                >
+                  <InputLabel id="demo-simple-select-outlined-label">
+                    Czy palisz papierosy?
+                  </InputLabel>
+                  <Select
+                    style={{ backgroundColor: "#FCFCFC !important" }}
+                    labelId="demo-simple-select-outlined-label"
+                    id="demo-simple-select-outlined"
+                    name="papierosy"
+                    onChange={this.handleInputChange}
+                    labelWidth="30%"
+                  >
+                    <MenuItem value="tak">Tak</MenuItem>
+                    <MenuItem value={"nie"}>Nie</MenuItem>
+                  </Select>
+                </FormControl>
+
                 <TextField
                   id="outlined-multiline-static"
                   label="Message"

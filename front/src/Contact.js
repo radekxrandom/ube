@@ -4,6 +4,11 @@ import Nav from "./components/Nav";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import TextField from "@material-ui/core/TextField";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
 class Contact extends Component {
   constructor(props) {
@@ -15,9 +20,16 @@ class Contact extends Component {
       mobile: "",
       email: "",
       prefCon: "",
-      resp: ""
+      resp: "",
+      choice: ""
     };
   }
+
+  choiceChange = e => {
+    this.setState({
+      choice: e.target.value
+    });
+  };
 
   handleInputChange = e => {
     this.setState({
@@ -96,6 +108,35 @@ class Contact extends Component {
                   autoComplete="email"
                   autoFocus
                 />
+                <FormControl
+                  variant="outlined"
+                  className="formcont"
+                  style={{
+                    marginBottom: "1%",
+                    width: "35%",
+                    textAlign: "right",
+                    backgroundColor: "#FCFCFC !important"
+                  }}
+                >
+                  <InputLabel id="demo-simple-select-outlined-label">
+                    Preferowany sposob kontaktu
+                  </InputLabel>
+                  <Select
+                    style={{ backgroundColor: "#FCFCFC !important" }}
+                    labelId="demo-simple-select-outlined-label"
+                    id="demo-simple-select-outlined"
+                    value={this.choice}
+                    onChange={this.choiceChange}
+                    labelWidth="30%"
+                  >
+                    <MenuItem value="">
+                      <em>Obojetnie</em>
+                    </MenuItem>
+                    <MenuItem value="email">Email</MenuItem>
+                    <MenuItem value={"tel"}>Telefon</MenuItem>
+                    <MenuItem value={"sms"}>Sms</MenuItem>
+                  </Select>
+                </FormControl>
                 <TextField
                   style={{
                     width: "35%",

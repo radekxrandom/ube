@@ -105,7 +105,7 @@ class Article extends Component {
             <img src="/hospital.jpg" className="img" alt="Pach" />
           </div>
           <div className="title">
-            <h1>Paulus vocatus apostolus Christi Iesu</h1>
+            <h1 className="titletext">Paulus vocatus apostolus Christi Iesu</h1>
             <h3>2020 20 20 Miasto</h3>
             <h3>Imie i Zwisko autora</h3>
           </div>

@@ -6,7 +6,7 @@ import Frame0 from "./components/Frame0";
 import Tiles from "./components/Tiles";
 
 const Main = props => (
-  <div>
+  <div className="dog">
     <Nav />
     <Tiles />
   </div>
