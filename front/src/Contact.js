@@ -21,9 +21,29 @@ class Contact extends Component {
       email: "",
       prefCon: "",
       resp: "",
-      choice: ""
+      choice: "",
+      cs: "smenu hid",
+      shown: false,
+      hamb: "hamb"
     };
   }
+
+  showMenu = () => {
+    console.log("pach");
+    if (this.state.shown === true) {
+      this.setState({
+        cs: "smenu hid",
+        hamb: "hamb",
+        shown: false
+      });
+    } else if (this.state.shown === false) {
+      this.setState({
+        cs: "smenu",
+        hamb: "hamb rot",
+        shown: true
+      });
+    }
+  };
 
   choiceChange = e => {
     this.setState({
@@ -59,7 +79,7 @@ class Contact extends Component {
   render() {
     return (
       <>
-        <Nav />
+        <Nav showMenu={this.showMenu} hamb={this.state.hamb} />
         <div className="article">
           <div className="contform">
             <div className="contInfo">

@@ -11,10 +11,29 @@ class Article extends Component {
       red: false,
       whereTo: "",
       lcl: "",
-      rcl: ""
+      rcl: "",
+      cs: "smenu hid",
+      shown: false,
+      hamb: "hamb"
     };
   }
 
+  showMenu = () => {
+    console.log("pach");
+    if (this.state.shown === true) {
+      this.setState({
+        cs: "smenu hid",
+        hamb: "hamb",
+        shown: false
+      });
+    } else if (this.state.shown === false) {
+      this.setState({
+        cs: "smenu",
+        hamb: "hamb rot",
+        shown: true
+      });
+    }
+  };
   componentDidMount() {
     var id = parseInt(this.props.match.params.id);
     var leftcl;
@@ -75,7 +94,7 @@ class Article extends Component {
   render() {
     return (
       <>
-        <Nav />
+        <Nav showMenu={this.showMenu} hamb={this.state.hamb} />
         <div className={this.state.lcl} onClick={i => this.goPlaces(-1)}>
           <div className="iconleft">
             <ArrowBackIosIcon

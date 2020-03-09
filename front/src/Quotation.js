@@ -12,9 +12,29 @@ class Quotation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      field: ""
+      field: "",
+      cs: "smenu hid",
+      shown: false,
+      hamb: "hamb"
     };
   }
+
+  showMenu = () => {
+    console.log("pach");
+    if (this.state.shown === true) {
+      this.setState({
+        cs: "smenu hid",
+        hamb: "hamb",
+        shown: false
+      });
+    } else if (this.state.shown === false) {
+      this.setState({
+        cs: "smenu",
+        hamb: "hamb rot",
+        shown: true
+      });
+    }
+  };
   handleInputChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -43,7 +63,7 @@ class Quotation extends Component {
   render() {
     return (
       <>
-        <Nav />
+        <Nav showMenu={this.showMenu} hamb={this.state.hamb} />
         <div className="article">
           <div className="contform" style={{ marginTop: "5%" }}>
             <div className="contInfo">
