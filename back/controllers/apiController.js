@@ -13,7 +13,7 @@ var transporter = nodemailer.createTransport({
 exports.sendmail = async (req, res) => {
   var mailOptions = {
     from: "ubezpieczenia",
-    to: "grazyna.roclawska@gmail.com",
+    to: "grazyna@rafrom.com",
     subject: req.body.title,
     text: req.body.mes + req.body.email
   };
