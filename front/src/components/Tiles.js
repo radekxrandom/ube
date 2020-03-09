@@ -55,6 +55,12 @@ class Tiles extends Component {
             <span className="pach">Ubezpieczenie od pobytu w szpitalu</span>
           </div>
         </div>
+        <div className={this.props.cs}>
+          <div className="its">
+            <div className="it it1">KONTAKT</div>
+            <div className="it it2">WYCENA</div>
+          </div>
+        </div>
       </>
     );
   }

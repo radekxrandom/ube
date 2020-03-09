@@ -21,9 +21,6 @@ const useStyles = makeStyles(theme => ({
 
 const Nav = props => {
   const classes = useStyles();
-  const showMenu = () => {
-    console.log("click");
-  };
 
   return (
     <>
@@ -54,7 +51,11 @@ const Nav = props => {
           >
             Kontakt
           </Button>
-          <MenuIcon className="hamb" onClick={showMenu} />
+          <MenuIcon
+            className={props.hamb}
+            style={{ zIndex: "10" }}
+            onClick={props.showMenu}
+          />
         </Toolbar>
       </AppBar>
     </>
