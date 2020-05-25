@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway|Source+Sans+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&amp;subset=latin-ext");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import '~antd/dist/antd.css';
 
 .App {
   text-align: center;
@@ -51,6 +52,7 @@
 .inf {
   margin-bottom: 1.5%;
   margin-top: -0.5%;
+  line-height: 150%;
 }
 
 .form-control {
@@ -656,6 +658,7 @@ body {
   position: relative;
   width: 33.33333%;
   padding-bottom: 15.865%;
+  font-family: "Raleway";
   /* 32:18, i.e. 16:9 */
   /* (100-32*3)/2 */
 }
@@ -748,14 +751,14 @@ li:hover {
 @media screen and (max-width: 1050px) {
   .item {
     width: 50% !important;
-    height: 9rem !important;
+    height: 14rem !important;
   }
 }
 
 @media screen and (max-width: 550px) {
   .item {
     width: 100% !important;
-    height: 9rem !important;
+    height: 14rem !important;
   }
 
   .dog {
@@ -846,8 +849,13 @@ li:hover {
     color: white;
     padding-left: 0.5rem;
     left: 0% !important;
-    top: 70% !important;
+    top: 55% !important;
     padding-right: 0.5rem;
+  }
+
+  .titletext {
+    font-family: "Montserrat" !important;
+    color: white;
   }
 }
 
@@ -882,8 +890,8 @@ img {
 }
 
 .bts {
-  color: white;
-  border: solid 1px white;
+  color: white !important;
+  border: solid 1px white !important;
 }
 
 .bts:hover {

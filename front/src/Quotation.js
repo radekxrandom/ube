@@ -7,6 +7,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { handleInputChange, handleQuotation } from "./Util";
 
 class Quotation extends Component {
   constructor(props) {
@@ -15,9 +16,21 @@ class Quotation extends Component {
       field: "",
       cs: "smenu hid",
       shown: false,
-      hamb: "hamb"
+      hamb: "hamb",
+      name: "",
+      age: "",
+      occupation: "",
+      health: "",
+      fags: "",
+      body: "",
+      email: "",
+      phone: "",
+      errors: {}
     };
   }
+
+  handleInputChange = handleInputChange.bind(this);
+  handleQuotation = handleQuotation.bind(this);
 
   showMenu = () => {
     console.log("pach");
@@ -34,30 +47,6 @@ class Quotation extends Component {
         shown: true
       });
     }
-  };
-  handleInputChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  handleSubmit = async e => {
-    e.preventDefault();
-    const { person, title, mes, mobile, email } = this.state;
-    let mespies = {
-      person,
-      title,
-      mes,
-      mobile,
-      email
-    };
-    let post = await axios.post("http://localhost:9000/api/sendmail", mespies);
-    console.log(post.status);
-    console.log(post.data);
-    let rs = post.data;
-    this.setState({
-      resp: rs.err
-    });
   };
 
   render() {
@@ -76,7 +65,7 @@ class Quotation extends Component {
               </div>
             </div>
             <div className="mess">
-              <form onSubmit={this.handleSubmit} noValidate>
+              <form onSubmit={this.handleQuotation} noValidate>
                 <TextField
                   style={{
                     width: "40%",
@@ -88,12 +77,38 @@ class Quotation extends Component {
                   margin="normal"
                   required
                   fullWidth
-                  id="mobile"
+                  id="name"
                   label="Imie"
-                  name="mobile"
+                  name="name"
                   onChange={this.handleInputChange}
-                  autoComplete="email"
+                  autoComplete="name"
                   autoFocus
+                  error={this.state.errors.name}
+                  helperText={
+                    this.state.errors.name ? this.state.errors.name : ""
+                  }
+                />
+                <TextField
+                  style={{
+                    width: "40%",
+                    display: "block",
+                    margin: "auto",
+                    marginBottom: "1%"
+                  }}
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="phone"
+                  label="Numer telefonu"
+                  name="phone"
+                  onChange={this.handleInputChange}
+                  autoComplete="phone"
+                  autoFocus
+                  error={this.state.errors.phone}
+                  helperText={
+                    this.state.errors.phone ? this.state.errors.phone : ""
+                  }
                 />
                 <TextField
                   style={{
@@ -107,11 +122,37 @@ class Quotation extends Component {
                   required
                   fullWidth
                   id="email"
-                  label="Wiek"
+                  label="Adres email"
                   name="email"
                   onChange={this.handleInputChange}
                   autoComplete="email"
                   autoFocus
+                  error={this.state.errors.email}
+                  helperText={
+                    this.state.errors.email ? this.state.errors.email : ""
+                  }
+                />
+                <TextField
+                  style={{
+                    width: "40%",
+                    display: "block",
+                    margin: "auto",
+                    marginBottom: "1%"
+                  }}
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="age"
+                  label="Wiek"
+                  name="age"
+                  onChange={this.handleInputChange}
+                  autoComplete="age"
+                  autoFocus
+                  error={this.state.errors.age}
+                  helperText={
+                    this.state.errors.age ? this.state.errors.age : ""
+                  }
                 />
                 <TextField
                   style={{

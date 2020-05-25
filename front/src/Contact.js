@@ -9,6 +9,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { message } from "antd";
+import { handleInputChange, handleContact } from "./Util";
 
 class Contact extends Component {
   constructor(props) {
@@ -24,9 +26,16 @@ class Contact extends Component {
       choice: "",
       cs: "smenu hid",
       shown: false,
-      hamb: "hamb"
+      hamb: "hamb",
+      name: "",
+      phone: "",
+      body: "",
+      errors: {}
     };
   }
+
+  handleInputChange = handleInputChange.bind(this);
+  handleContact = handleContact.bind(this);
 
   showMenu = () => {
     console.log("pach");
@@ -51,31 +60,6 @@ class Contact extends Component {
     });
   };
 
-  handleInputChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  handleSubmit = async e => {
-    e.preventDefault();
-    const { person, title, mes, mobile, email } = this.state;
-    let mespies = {
-      person,
-      title,
-      mes,
-      mobile,
-      email
-    };
-    let post = await axios.post("http://localhost:9000/api/sendmail", mespies);
-    console.log(post.status);
-    console.log(post.data);
-    let rs = post.data;
-    this.setState({
-      resp: rs.err
-    });
-  };
-
   render() {
     return (
       <>
@@ -91,7 +75,7 @@ class Contact extends Component {
               </div>
             </div>
             <div className="mess">
-              <form onSubmit={this.handleSubmit} noValidate>
+              <form onSubmit={this.handleContact} noValidate>
                 <TextField
                   style={{
                     width: "40%",
@@ -103,12 +87,38 @@ class Contact extends Component {
                   margin="normal"
                   required
                   fullWidth
-                  id="mobile"
-                  label="Mobile number"
-                  name="mobile"
+                  id="name"
+                  label="Imie"
+                  name="name"
                   onChange={this.handleInputChange}
-                  autoComplete="email"
+                  autoComplete="name"
                   autoFocus
+                  error={this.state.errors.name}
+                  helperText={
+                    this.state.errors.name ? this.state.errors.name : ""
+                  }
+                />
+                <TextField
+                  style={{
+                    width: "40%",
+                    display: "block",
+                    margin: "auto",
+                    marginBottom: "1%"
+                  }}
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="phone"
+                  label="Numer telefonu"
+                  name="phone"
+                  onChange={this.handleInputChange}
+                  autoComplete="phone"
+                  autoFocus
+                  error={this.state.errors.phone}
+                  helperText={
+                    this.state.errors.phone ? this.state.errors.phone : ""
+                  }
                 />
                 <TextField
                   style={{
@@ -122,11 +132,15 @@ class Contact extends Component {
                   required
                   fullWidth
                   id="email"
-                  label="Your email address"
+                  label="Adres email"
                   name="email"
                   onChange={this.handleInputChange}
                   autoComplete="email"
                   autoFocus
+                  error={this.state.errors.email}
+                  helperText={
+                    this.state.errors.email ? this.state.errors.email : ""
+                  }
                 />
                 <FormControl
                   variant="outlined"
