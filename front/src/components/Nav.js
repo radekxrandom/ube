@@ -27,7 +27,14 @@ const Nav = props => {
       <AppBar position="static" style={{ marginBottom: "0.1%" }}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link style={{ textDecoration: "none", color: "white" }} to="/">
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "white",
+                fontFamily: "Raleway"
+              }}
+              to="/"
+            >
               Ubezpiecz zycie w Irlandii
             </Link>
           </Typography>
@@ -37,7 +44,7 @@ const Nav = props => {
             component={Link}
             to={"/quotation"}
             style={{ marginRight: "0.5%" }}
-            variant="contained"
+            variant="outlined"
           >
             Uzyskaj wycene
           </Button>
@@ -46,8 +53,7 @@ const Nav = props => {
             component={Link}
             to={"/contact"}
             style={{ marginLeft: "0.5%" }}
-            variant="contained"
-            color="secondary"
+            variant="outlined"
           >
             Kontakt
           </Button>

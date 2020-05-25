@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway|Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&amp;subset=latin-ext");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 .App {
   text-align: center;
 }
@@ -77,11 +81,6 @@
 
 .left {
   left: 0%;
-}
-
-.img {
-  float: left;
-  width: 45%;
 }
 
 .form-group {
@@ -538,20 +537,17 @@ textarea.form-control.is-invalid {
 }
 
 .articletext {
-  margin-top: 16%;
   text-align: justify;
-}
-
-.title {
-  padding-left: 47%;
-  padding-top: 5%;
+  font-family: "Raleway";
+  line-height: 150%;
+  foant-family: "Quicksand";
 }
 
 .article {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 3%;
-  margin-bottom: 25%;
+  font-family: "Raleway";
 }
 
 body {
@@ -749,6 +745,13 @@ li:hover {
   }
 }
 
+@media screen and (max-width: 1050px) {
+  .item {
+    width: 50% !important;
+    height: 9rem !important;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .item {
     width: 100% !important;
@@ -761,6 +764,14 @@ li:hover {
 
   .fth {
     display: none;
+  }
+
+  .MuiFormControl-root {
+    width: 90% !important;
+  }
+
+  .MuiButtonBase-root {
+    width: 90% !important;
   }
 
   .bts {
@@ -779,26 +790,9 @@ li:hover {
     margin-right: 0%;
   }
 
-  .img {
-    width: 100%;
-    float: none;
-  }
-
-  .titletext {
-    color: #f0f0f0;
-    margin-bottom: 15%;
-  }
-
   .hamb {
     display: inherit !important;
     z-index: 10;
-  }
-
-  .title {
-    padding-left: 0%;
-    margin-top: -45%;
-    text-align: center;
-    padding-top: 0%;
   }
 
   .active:hover {
@@ -843,4 +837,55 @@ li:hover {
   .it1 {
     margin-bottom: 12%;
   }
+
+  img {
+    width: 100% !important;
+  }
+
+  .title {
+    color: white;
+    padding-left: 0.5rem;
+    left: 0% !important;
+    top: 70% !important;
+    padding-right: 0.5rem;
+  }
+}
+
+.title {
+  position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  left: 82%;
+  right: 0;
+  text-align: center;
+  width: fit-content;
+  top: 85%;
+}
+
+img {
+  width: 80%;
+}
+
+.titletext {
+  font-size: 1.7rem !important;
+  font-family: "Raleway";
+}
+
+.articleHeader {
+  position: relative;
+  display: inline-block;
+}
+
+.MuiAppBar-colorPrimary {
+  /*  background-color: #2f5297 !important; */
+  background: #6885af !important;
+}
+
+.bts {
+  color: white;
+  border: solid 1px white;
+}
+
+.bts:hover {
+  filter: blur(0.75px);
 }

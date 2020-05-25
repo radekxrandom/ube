@@ -3,6 +3,7 @@ import { Link, useHistory, Redirect } from "react-router-dom";
 import Nav from "./components/Nav";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import { accidents, health, hospital, retirement, dummy } from "./articles/pl";
 
 class Article extends Component {
   constructor(props) {
@@ -14,7 +15,9 @@ class Article extends Component {
       rcl: "",
       cs: "smenu hid",
       shown: false,
-      hamb: "hamb"
+      hamb: "hamb",
+      article: {},
+      title: ""
     };
   }
 
@@ -34,10 +37,42 @@ class Article extends Component {
       });
     }
   };
-  componentDidMount() {
-    var id = parseInt(this.props.match.params.id);
+
+  setupArticle = id => {
+    switch (id) {
+      case 2:
+        this.setState({
+          article: accidents,
+          title: "Ubezpieczenie od wypadków"
+        });
+        break;
+      case 3:
+        this.setState({
+          article: health,
+          title: "Ubezpieczenie od chorób"
+        });
+        break;
+      case 9:
+        this.setState({
+          article: hospital,
+          title: "Ubezpieczenie od pobytu w szpitalu"
+        });
+        break;
+      case 8:
+        this.setState({
+          article: retirement,
+          title: "Prywatna emerytura"
+        });
+        break;
+      default:
+        this.setState({
+          article: dummy,
+          title: "Paulus vocatus apostolus Christi Iesu"
+        });
+    }
     var leftcl;
     var rightcl;
+
     if (id === 1) {
       leftcl = "unactive left";
       rightcl = "active right";
@@ -55,7 +90,22 @@ class Article extends Component {
       rcl: rightcl,
       lcl: leftcl
     });
+  };
+
+  componentDidMount() {
+    const id = parseInt(this.props.match.params.id);
+    console.log(id);
+    this.setupArticle(id);
   }
+
+  componentDidUpdate = async prevProps => {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      console.log("i fired");
+      const id = parseInt(this.props.match.params.id);
+      console.log(id);
+      this.setupArticle(id);
+    }
+  };
 
   goPlaces = i => {
     var id = parseInt(this.props.match.params.id);
@@ -91,6 +141,18 @@ class Article extends Component {
     this.props.history.push(`/article/${place}`);
   };
 
+  onArrowPress = e => {
+    console.log("pach");
+    if (e.keyCode === 37) {
+      this.goPlaces(-1);
+      return;
+    }
+    if (e.keyCode === 39) {
+      this.goPlaces(+1);
+      return;
+    }
+  };
+
   render() {
     return (
       <>
@@ -119,42 +181,19 @@ class Article extends Component {
             />
           </div>
         </div>
-        <div className="article">
-          <div className="image">
-            <img src="/hospital.jpg" className="img" alt="Pach" />
-          </div>
-          <div className="title">
-            <h1 className="titletext">Paulus vocatus apostolus Christi Iesu</h1>
-            <h3>2020 20 20 Miasto</h3>
-            <h3>Imie i Zwisko autora</h3>
+        <div className="article" onKeyDown={this.onArrowPress}>
+          <div className="articleHeader">
+            <div className="image">
+              <img src="/hospital.jpg" className="img" alt="Pach" />
+            </div>
+            <div className="title">
+              <h1 className="titletext">{this.state.title}</h1>
+            </div>
           </div>
           <div className="articletext">
-            <p>
-              ecclesiae Dei quae est Corinthi sanctificatis in Christo Iesu
-              vocatis sanctis cum omnibus qui invocant nomen Domini nostri Iesu
-              Christi in omni loco ipsorum et nostro
-            </p>
-            <p>
-              gratia vobis et pax a Deo Patre nostro et Domino Iesu Christo 4
-              gratias ago Deo meo semper pro vobis in gratia Dei quae da ta est
-              vobis in Christo Iesu 5 quia in omnibus divites facti estis in
-              illo in omni verbo et in omni scientia
-            </p>
-            <p>
-              sicut testimonium Christi confirmatum est in vobis 7 ita ut nihil
-              vobis desit in ulla gratia expectantibus revelationem Domini
-              nostri Iesu Christi 8 qui et confirmabit vos usque ad finem sine
-              crimine in die adventus Domini nostri Iesu Christi 9 fidelis Deus
-              per quem vocati estis in societatem Filii eius Iesu Christi Domini
-              nostri
-            </p>
-            <p>
-              bsecro autem vos fratres per nomen Domini nostri Iesu Christi ut
-              id ipsum dicatis omnes et non sint in vobis scismata sitis autem
-              perfecti in eodem sensu et in eadem sententia 11 significatum est
-              enim mihi de vobis fratres mei ab his qui sunt Chloes quia
-              contentiones inter vos sunt
-            </p>
+            {Object.entries(this.state.article).map((article, i) => (
+              <p>{this.state.article[i]}</p>
+            ))}
           </div>
         </div>
       </>

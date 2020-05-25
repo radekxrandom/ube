@@ -94,7 +94,7 @@ class Contact extends Component {
               <form onSubmit={this.handleSubmit} noValidate>
                 <TextField
                   style={{
-                    width: "35%",
+                    width: "40%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -112,7 +112,7 @@ class Contact extends Component {
                 />
                 <TextField
                   style={{
-                    width: "35%",
+                    width: "40%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -133,7 +133,7 @@ class Contact extends Component {
                   className="formcont"
                   style={{
                     marginBottom: "1%",
-                    width: "35%",
+                    width: "40%",
                     textAlign: "right",
                     backgroundColor: "#FCFCFC !important"
                   }}
@@ -159,7 +159,7 @@ class Contact extends Component {
                 </FormControl>
                 <TextField
                   style={{
-                    width: "35%",
+                    width: "40%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -181,7 +181,7 @@ class Contact extends Component {
                   label="Message"
                   name="mes"
                   style={{
-                    width: "35%",
+                    width: "40%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -197,7 +197,7 @@ class Contact extends Component {
                   type="submit"
                   variant="outlined"
                   color="primary"
-                  style={{ width: "35%" }}
+                  style={{ width: "40%" }}
                 >
                   Wyslij
                 </Button>

@@ -1,0 +1,3 @@
+export const pl = {
+  1: "To ubezpieczenie dostępne jest dla osób pracujących i osiągających dochód minimum 300 euro tygodniowo. Mając w zakresie swej polisy tę opcję  klient w razie niezdolności do pracy spowodowanej wypadkiem - zapewnia sobie cotygodniową wypłatę świadczenia w kwocie od €120 do €400 tygodniowo (w zależności od osiąganego dochodu). Czas trwania wypłaty świadczenia rozpoczyna się po 2 tygodniach od wypadku i może trwać maksymalnie do  52 tygodni niezdolności do pracy. Ubezpieczenie obejmuje Twoje wypadki zarówno te w pracy jak i w życiu prywatnym -  w drodze, w domu, w ogrodzie. Jest możliwość rozszerzenia ochrony poza terytorium Irlandii."
+};
