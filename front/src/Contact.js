@@ -78,7 +78,7 @@ class Contact extends Component {
               <form onSubmit={this.handleContact} noValidate>
                 <TextField
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -100,7 +100,7 @@ class Contact extends Component {
                 />
                 <TextField
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -122,7 +122,7 @@ class Contact extends Component {
                 />
                 <TextField
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -147,7 +147,7 @@ class Contact extends Component {
                   className="formcont"
                   style={{
                     marginBottom: "1%",
-                    width: "40%",
+                    width: "100%",
                     textAlign: "right",
                     backgroundColor: "#FCFCFC !important"
                   }}
@@ -173,7 +173,7 @@ class Contact extends Component {
                 </FormControl>
                 <TextField
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -195,7 +195,7 @@ class Contact extends Component {
                   label="Message"
                   name="mes"
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -211,7 +211,7 @@ class Contact extends Component {
                   type="submit"
                   variant="outlined"
                   color="primary"
-                  style={{ width: "40%" }}
+                  style={{ width: "100%" }}
                 >
                   Wyslij
                 </Button>

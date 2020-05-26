@@ -68,7 +68,7 @@ class Quotation extends Component {
               <form onSubmit={this.handleQuotation} noValidate>
                 <TextField
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -90,7 +90,7 @@ class Quotation extends Component {
                 />
                 <TextField
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -112,7 +112,7 @@ class Quotation extends Component {
                 />
                 <TextField
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -134,7 +134,7 @@ class Quotation extends Component {
                 />
                 <TextField
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -156,7 +156,7 @@ class Quotation extends Component {
                 />
                 <TextField
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -177,7 +177,7 @@ class Quotation extends Component {
                   className="formcont"
                   style={{
                     marginBottom: "1%",
-                    width: "40%",
+                    width: "100%",
                     textAlign: "right",
                     backgroundColor: "#FCFCFC !important"
                   }}
@@ -203,7 +203,7 @@ class Quotation extends Component {
                   className="formcont"
                   style={{
                     marginBottom: "1%",
-                    width: "40%",
+                    width: "100%",
                     textAlign: "right",
                     backgroundColor: "#FCFCFC !important"
                   }}
@@ -229,7 +229,7 @@ class Quotation extends Component {
                   label="Message"
                   name="mes"
                   style={{
-                    width: "40%",
+                    width: "100%",
                     display: "block",
                     margin: "auto",
                     marginBottom: "1%"
@@ -245,7 +245,7 @@ class Quotation extends Component {
                   type="submit"
                   variant="outlined"
                   color="primary"
-                  style={{ width: "40%" }}
+                  style={{ width: "100%" }}
                 >
                   Wyslij
                 </Button>

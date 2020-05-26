@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway|Source+Sans+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto&amp;subset=latin-ext");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 .App {
   text-align: center;
@@ -543,13 +543,7 @@ textarea.form-control.is-invalid {
   font-family: "Raleway";
   line-height: 150%;
   foant-family: "Quicksand";
-}
-
-.article {
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 3%;
-  font-family: "Raleway";
+  font-size: 1rem;
 }
 
 body {
@@ -634,8 +628,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  max-height: 93.3vh;
+  min-height: 93.3vh;
 }
 
 .item:hover {
@@ -657,7 +653,6 @@ body {
   text-shadow: 0.6px 0.6px #000000;
   position: relative;
   width: 33.33333%;
-  padding-bottom: 15.865%;
   font-family: "Raleway";
   /* 32:18, i.e. 16:9 */
   /* (100-32*3)/2 */
@@ -711,7 +706,6 @@ li:hover {
   border-bottom-style: solid;
   border-bottom-width: 1%;
   border-bottom-color: orange;
-  margin-bottom: 2%;
 }
 
 .hid {
@@ -748,14 +742,157 @@ li:hover {
   }
 }
 
-@media screen and (max-width: 1050px) {
+.article {
+  margin-left: 32.5%;
+  margin-right: 32.5%;
+  margin-top: 3%;
+  font-family: "Raleway";
+}
+
+.articles {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 3%;
+  font-family: "Raleway";
+}
+
+@media screen and (max-width: 2000px) {
+  img {
+    width: 70% !important;
+  }
+
+  .title {
+    left: 71% !important;
+    top: 88% !important;
+  }
+
+  .titletext {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .article {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  img {
+    width: 60% !important;
+  }
+
+  .title {
+    left: 61% !important;
+    top: 88% !important;
+  }
+
+  .titletext {
+    font-size: 1.4rem !important;
+  }
+
+  /*
+  .MuiToolbar-root>.MuiButtonBase-root {
+    width: initial !important;
+  }
+
+  .MuiFormControl-root {
+    width: 70% !important;
+  }
+
+  .MuiButtonBase-root {
+    width: 70% !important;
+  } */
+}
+
+@media screen and (max-width: 1300px) {
+  .article {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  img {
+    width: 100% !important;
+  }
+
+  .title {
+    color: white;
+    padding-left: 0.5rem;
+    left: 0% !important;
+    top: 85% !important;
+    padding-right: 0.5rem;
+  }
+
+  .titletext {
+    font-family: "Montserrat" !important;
+    color: white;
+    background: #00000042;
+    padding: 0.3rem;
+    border-radius: 5px;
+    font-size: 1.7rem !important;
+  }
+
+  /*
+  .MuiToolbar-root>.MuiButtonBase-root {
+    width: initial !important;
+  }
+
+  .MuiFormControl-root {
+    width: 70% !important;
+  }
+
+  .MuiButtonBase-root {
+    width: 70% !important;
+  } */
+}
+
+@media screen and (max-width: 950px) {
+  .article {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+  }
+
   .item {
     width: 50% !important;
     height: 14rem !important;
   }
+
+  .titletext {
+    background: none;
+    padding: none;
+  }
+
+  .articles {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  /*
+  .MuiToolbar-root>.MuiButtonBase-root {
+    width: initial !important;
+  }
+
+  .MuiFormControl-root {
+    width: 100% !important;
+  }
+
+  .MuiButtonBase-root {
+    width: 100% !important;
+  } */
+}
+
+@media screen and (max-width: 700px) {
+  .articles {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
 @media screen and (max-width: 550px) {
+  .article {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
   .item {
     width: 100% !important;
     height: 14rem !important;
@@ -769,14 +906,21 @@ li:hover {
     display: none;
   }
 
+  .articles {
+    margin-top: -1%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  /*
   .MuiFormControl-root {
     width: 90% !important;
   }
 
+
   .MuiButtonBase-root {
     width: 90% !important;
-  }
-
+  } */
   .bts {
     display: none !important;
   }
@@ -785,12 +929,6 @@ li:hover {
   .right {
     top: -25% !important;
     color: #f0f0f0;
-  }
-
-  .article {
-    margin-top: -1%;
-    margin-left: 0%;
-    margin-right: 0%;
   }
 
   .hamb {
@@ -875,7 +1013,8 @@ img {
 }
 
 .titletext {
-  font-size: 1.7rem !important;
+  font-size: 1.7rem;
+  font-weight: 700;
   font-family: "Raleway";
 }
 

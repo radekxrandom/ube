@@ -17,7 +17,8 @@ class Article extends Component {
       shown: false,
       hamb: "hamb",
       article: {},
-      title: ""
+      title: "",
+      img: ""
     };
   }
 
@@ -43,31 +44,36 @@ class Article extends Component {
       case 2:
         this.setState({
           article: accidents,
-          title: "Ubezpieczenie od wypadków"
+          title: "Ubezpieczenie od wypadków",
+          img: "/accident.jpg"
         });
         break;
       case 3:
         this.setState({
           article: health,
-          title: "Ubezpieczenie od chorób"
+          title: "Ubezpieczenie od chorób",
+          img: "/illness.jpg"
         });
         break;
       case 9:
         this.setState({
           article: hospital,
-          title: "Ubezpieczenie od pobytu w szpitalu"
+          title: "Ubezpieczenie od pobytu w szpitalu",
+          img: "/hospital.jpg"
         });
         break;
       case 8:
         this.setState({
           article: retirement,
-          title: "Prywatna emerytura"
+          title: "Prywatna emerytura",
+          img: "/prowansale.jpg"
         });
         break;
       default:
         this.setState({
           article: dummy,
-          title: "Paulus vocatus apostolus Christi Iesu"
+          title: "Paulus vocatus apostolus Christi Iesu",
+          img: "/hospital.jpg"
         });
     }
     var leftcl;
@@ -181,10 +187,10 @@ class Article extends Component {
             />
           </div>
         </div>
-        <div className="article" onKeyDown={this.onArrowPress}>
+        <div className="articles" onKeyDown={this.onArrowPress}>
           <div className="articleHeader">
             <div className="image">
-              <img src="/hospital.jpg" className="img" alt="Pach" />
+              <img src={this.state.img} className="img" alt="Pach" />
             </div>
             <div className="title">
               <h1 className="titletext">{this.state.title}</h1>
