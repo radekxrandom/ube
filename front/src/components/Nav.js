@@ -24,7 +24,7 @@ const Nav = props => {
 
   return (
     <>
-      <AppBar position="static" style={{ marginBottom: "0.1%" }}>
+      <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             <Link
