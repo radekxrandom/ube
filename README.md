@@ -1,17 +1,34 @@
-A website for an insurance agent that I was hired to make.
-https://ube-2-r3ncop88i.now.sh/ <- static version, the real one has back-end.
+# Insurance agent's website
 
-I've created it using react, express, mongoose. It is a single page app.
+## https://ube-2.now.sh
 
-Homepage
-![sc](https://i.imgur.com/InazxYj.jpg)
+My first free lancing project.
+Created with react and node. Single page application.
 
-Article page. Users can navigate between articles with arrows.
-![sc](https://i.imgur.com/R6Cc8Iz.jpg)
+# Content
 
-Contact me page
-![sc](https://i.imgur.com/rVqzvHh.png)
+## Homepage
 
-To-do list:
+![sc](https://i.imgur.com/nFog3x4.jpg)
 
-- finish get a quotation page
+## Article page. Users can navigate between articles with arrows.
+
+![sc](https://i.imgur.com/tF85qGa.jpg)
+
+## Contact me page
+
+![sc](https://i.imgur.com/s9niDzr.png)
+
+# Respnsive design
+
+## Homepage
+
+![gif showing adapting layout](https://thumbs.gfycat.com/AggravatingOldfashionedDrever-size_restricted.gif)
+
+## Article page
+
+![gif showing adapting layout](https://thumbs.gfycat.com/ThornyAgitatedEyra-size_restricted.gif)
+
+## Contact me page
+
+![gif showing adapting layout](https://thumbs.gfycat.com/LameExhaustedAustrianpinscher-size_restricted.gif)
