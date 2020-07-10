@@ -49,7 +49,7 @@ class Tiles extends Component {
             <span className="pach">Ubezpieczenie kredytu na dom</span>
           </div>
           <div className="item eh" onClick={i => this.goToArticle(8)}>
-            <span className="pach">Ubezpieczenie dla prowansali</span>
+            <span className="pach">Prywatna emerytura</span>
           </div>
           <div className="item nin" onClick={i => this.goToArticle(9)}>
             <span className="pach">Ubezpieczenie od pobytu w szpitalu</span>
