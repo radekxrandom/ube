@@ -3,7 +3,19 @@ import { Link, useHistory, Redirect } from "react-router-dom";
 import Nav from "./components/Nav";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import { accidents, health, hospital, retirement, dummy } from "./articles/pl";
+import { accidents, health, hospital, retirement, blank } from "./articles/pl";
+
+const articleUrlEnum = {
+  life: 1,
+  ill: 2,
+  children: 3,
+  house: 4,
+  blank: null,
+  hospital: 6,
+  income: 7,
+  retirement: 8,
+  accidents: 9
+};
 
 class Article extends Component {
   constructor(props) {
@@ -18,7 +30,18 @@ class Article extends Component {
       hamb: "hamb",
       article: {},
       title: "",
-      img: ""
+      img: "",
+      tileOrder: [
+        "life",
+        "health",
+        "children",
+        "house",
+        "blank",
+        "hospital",
+        "income",
+        "retirement",
+        "accidents"
+      ]
     };
   }
 
@@ -40,6 +63,8 @@ class Article extends Component {
   };
 
   setupArticle = id => {
+    const enumKey = this.state.tileOrder[id];
+    const index = articleUrlEnum[enumKey];
     switch (id) {
       case 2:
         this.setState({
@@ -71,7 +96,7 @@ class Article extends Component {
         break;
       default:
         this.setState({
-          article: dummy,
+          article: blank,
           title: "Paulus vocatus apostolus Christi Iesu",
           img: "/hospital.jpg"
         });

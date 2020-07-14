@@ -27,7 +27,7 @@ export const retirement = {
   5: "Dobry doradca finansowy pomoże wybrać odpowiedni dla Ciebie plan emerytalny, jak i też poprowadzi Cię przez cały proces aplikacyjny."
 };
 
-export const dummy = {
+export const blank = {
   1: "ecclesiae Dei quae est Corinthi sanctificatis in Christo Iesu vocatis sanctis cum omnibus qui invocant nomen Domini nostri Iesu Christi in omni loco ipsorum et nostro",
   2: "ecclesiae Dei quae est Corinthi sanctificatis in Christo Iesu vocatis sanctis cum omnibus qui invocant nomen Domini nostri Iesu Christi in omni loco ipsorum et nostro",
   3: "ecclesiae Dei quae est Corinthi sanctificatis in Christo Iesu vocatis sanctis cum omnibus qui invocant nomen Domini nostri Iesu Christi in omni loco ipsorum et nostro",

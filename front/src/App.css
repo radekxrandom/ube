@@ -532,8 +532,8 @@ textarea.form-control.is-invalid {
   color: #dc3545;
 }
 
-.st {
-  background-image: url("/life.jpg");
+.st, .life {
+  background-image: url("https://image.shutterstock.com/image-photo/happy-family-near-new-home-600w-163386647.jpg");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -550,57 +550,57 @@ body {
   background-color: #fcfcfc;
 }
 
-.nd {
-  background-image: url("/accident.jpg");
+.nd, .health {
+  background-image: url("https://image.shutterstock.com/image-photo/businessman-chooses-emoticon-icons-healthcare-600w-1484583071.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.rd {
-  background-image: url("/illness.jpg");
+.rd, .children {
+  background-image: url("https://image.shutterstock.com/image-photo/health-care-assurance-family-children-600w-436493467.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.frth {
-  background-image: url("/income.jpg");
+.frth, .house {
+  background-image: url("https://image.shutterstock.com/image-photo/house-insurance-600w-129508994.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.fth {
-  background-image: url("/income.jpg");
+.fth, .blank {
+  background-image: url("https://image.shutterstock.com/image-photo/new-building-residential-house-purchase-600w-1105116683.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.sx {
-  background-image: url("/kids.jpg");
+.sx, .hospital {
+  background-image: url("https://image.shutterstock.com/image-photo/hospital-sick-male-patient-sleeps-600w-1190997985.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.sv {
-  background-image: url("/mortgage.png");
+.sv, .income {
+  background-image: url("https://image.shutterstock.com/image-photo/savings-protection-close-female-hands-600w-151023074.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.eh {
-  background-image: url("/prowansale.jpg");
+.eh, .retirement {
+  background-image: url("https://image.shutterstock.com/image-photo/midsection-businessmans-hands-protecting-coins-600w-193313684.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.nin {
-  background-image: url("/hospital.jpg");
+.nin, .accidents {
+  background-image: url("https://image.shutterstock.com/image-photo/closeup-asian-mans-arm-long-600w-1418629304.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
