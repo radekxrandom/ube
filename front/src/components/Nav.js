@@ -1,67 +1,51 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
+import { A, setLinkProps } from "hookrouter";
 import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
   title: {
     flexGrow: 1
   }
 }));
-
+const quotationHref = {
+  href: "/quotation"
+};
+const contactHref = {
+  href: "/contact"
+};
 const Nav = props => {
   const classes = useStyles();
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <Link
-              style={{
-                textDecoration: "none",
-                color: "white",
-                fontFamily: "Raleway"
-              }}
-              to="/"
-            >
+            <A href="/" className="navMainLink">
               Ubezpiecz zycie w Irlandii
-            </Link>
+            </A>
           </Typography>
 
           <Button
-            className="bts"
-            component={Link}
-            to={"/quotation"}
-            style={{ marginRight: "0.5%" }}
+            {...setLinkProps(quotationHref)}
+            className="bts emSpan"
             variant="outlined"
           >
             Uzyskaj wycene
           </Button>
           <Button
-            className="bts"
-            component={Link}
-            to={"/contact"}
-            style={{ marginLeft: "0.5%" }}
+            {...setLinkProps(contactHref)}
+            className="bts navbtn"
             variant="outlined"
           >
             Kontakt
           </Button>
-          <MenuIcon
-            className={props.hamb}
-            style={{ zIndex: "10" }}
-            onClick={props.showMenu}
-          />
+          <MenuIcon className={props.hamb} onClick={props.showMenu} />
         </Toolbar>
       </AppBar>
     </>

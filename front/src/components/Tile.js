@@ -1,18 +1,7 @@
 import React from "react";
+import { navigate } from "hookrouter";
 
 const Tile = props => {
-  const articleUrlEnum = {
-    life: 1,
-    health: 2,
-    children: 3,
-    house: 4,
-    blank: null,
-    hospital: 6,
-    income: 7,
-    retirement: 8,
-    accidents: 9
-  };
-
   const articleTitleEnum = {
     life: "Ubezpieczenie na zycie",
     health: "Ubezpieczenie od chorob",
@@ -25,13 +14,10 @@ const Tile = props => {
     accidents: "Ubezpieczenie wypadkowe"
   };
   const { tileName } = props;
-  console.log(tileName);
-  console.log(props.tileName);
-  console.log(articleTitleEnum[tileName]);
   return (
     <div
       className={`item ${tileName}`}
-      onClick={i => props.goToArticle(tileName)}
+      onClick={() => navigate(`/article/${tileName}`)}
     >
       <span className="pach">{articleTitleEnum[tileName]}</span>
     </div>

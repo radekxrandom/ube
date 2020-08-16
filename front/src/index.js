@@ -1,10 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import wdyr from "./wdyr";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { PlaceContextProvider } from './contexts/PlaceContext';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const root = document.getElementById("root");
+
+ReactDOM.render(
+  <PlaceContextProvider>
+    <App />
+  </PlaceContextProvider>,
+  root
+);
 
 if (module.hot) {
   module.hot.accept();

@@ -1,28 +1,32 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Main from "./Main";
-import ContactStupid from "./ContactStupid";
-import QuotationStupid from "./QuotationStupid";
-import FormsHOC from "./FormsHOC";
-import ArticleContainer from "./ArticleContainer";
+import Main from "./containers/Main";
+import Contact from "./components/Contact";
+import Quotation from "./components/Quotation";
+import ArticleContainer from "./containers/ArticleContainer";
+import Nav from "./components/Nav";
+import useHamburger from "./hooks/useHamburger";
+import { useRoutes } from "hookrouter";
+import ArticleFunctional from "./containers/ArticleFunctional";
+import DrawerContainer from "./containers/DrawerContainer";
 
-const wrappedContact = FormsHOC(ContactStupid);
-const wrappedQuotation = FormsHOC(QuotationStupid);
+const routes = {
+  "/": () => <Main />,
+  "/contact": () => <Contact />,
+  "/quotation": () => <Quotation />,
+  "/article/:title": ({ title }) => <ArticleFunctional title={title} />
+};
 
-function App() {
+const App = () => {
+  const routeResult = useRoutes(routes);
+  const [state, showMenu] = useHamburger();
   return (
     <>
-      <Router>
-        <Switch>
-          <Route path="/contact" component={wrappedContact} />
-          <Route path="/article/:title" component={ArticleContainer} />
-          <Route path="/quotation" component={wrappedQuotation} />
-          <Route path="/" component={Main} />
-        </Switch>
-      </Router>
+      <Nav showMenu={showMenu} hamb={state.hamb} />
+      <DrawerContainer shown={state.shown} />
+      {routeResult}
     </>
   );
-}
+};
 
 export default App;

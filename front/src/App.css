@@ -19,6 +19,7 @@
 }
 
 .hamb {
+  z-index: 10 !important;
   diasplay: none !important;
 }
 
@@ -40,8 +41,7 @@
 
 .right,
 .left {
-  height: 93.4%;
-  margin-top: -0.1%;
+  height: 100vh;
   position: absolute;
   width: 4%;
 }
@@ -533,9 +533,10 @@ textarea.form-control.is-invalid {
 }
 
 .st, .life {
-  background-image: url("https://image.shutterstock.com/image-photo/happy-family-near-new-home-600w-163386647.jpg");
+  background-image: url("/life.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .articletext {
@@ -551,56 +552,56 @@ body {
 }
 
 .nd, .health {
-  background-image: url("https://image.shutterstock.com/image-photo/businessman-chooses-emoticon-icons-healthcare-600w-1484583071.jpg");
+  background-image: url("/health.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .rd, .children {
-  background-image: url("https://image.shutterstock.com/image-photo/health-care-assurance-family-children-600w-436493467.jpg");
+  background-image: url("/children.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .frth, .house {
-  background-image: url("https://image.shutterstock.com/image-photo/house-insurance-600w-129508994.jpg");
+  background-image: url("/house.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .fth, .blank {
-  background-image: url("https://image.shutterstock.com/image-photo/new-building-residential-house-purchase-600w-1105116683.jpg");
+  background-image: url("/blank.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .sx, .hospital {
-  background-image: url("https://image.shutterstock.com/image-photo/hospital-sick-male-patient-sleeps-600w-1190997985.jpg");
+  background-image: url("/hospital.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .sv, .income {
-  background-image: url("https://image.shutterstock.com/image-photo/savings-protection-close-female-hands-600w-151023074.jpg");
+  background-image: url("/income.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .eh, .retirement {
-  background-image: url("https://image.shutterstock.com/image-photo/midsection-businessmans-hands-protecting-coins-600w-193313684.jpg");
+  background-image: url("/retirement.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .nin, .accidents {
-  background-image: url("https://image.shutterstock.com/image-photo/closeup-asian-mans-arm-long-600w-1418629304.jpg");
+  background-image: url("/accidents.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -624,14 +625,20 @@ body {
   top: 0;
 }
 
+#root {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
   align-items: stretch;
-  max-height: 93.3vh;
-  min-height: 93.3vh;
+  margin-top: 6.5vh !important;
+  max-height: 93.5vh;
+  min-height: 93.5vh;
 }
 
 .item:hover {
@@ -717,6 +724,10 @@ li:hover {
   margin-right: 15%;
 }
 
+.MuiAppBar-positionFixed {
+  position: absolute !important;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -745,14 +756,14 @@ li:hover {
 .article {
   margin-left: 32.5%;
   margin-right: 32.5%;
-  margin-top: 3%;
+  margin-top: 5%;
   font-family: "Raleway";
 }
 
 .articles {
   margin-left: 20%;
   margin-right: 20%;
-  margin-top: 3%;
+  margin-top: 8%;
   font-family: "Raleway";
 }
 
@@ -808,6 +819,7 @@ li:hover {
   .article {
     margin-left: 20%;
     margin-right: 20%;
+    margin-top: 8%;
   }
 
   img {
@@ -845,15 +857,29 @@ li:hover {
   } */
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1100px) {
+  .MuiAppBar-positionFixed {
+    position: fixed !important;
+  }
+
+  #root {
+    overflow-y: auto;
+    height: fit-content;
+  }
+
   .article {
     margin-left: 12.5%;
     margin-right: 12.5%;
+    margin-top: 10%;
   }
 
   .item {
     width: 50% !important;
     height: 14rem !important;
+  }
+
+  .item:last-child {
+    width: 100% !important;
   }
 
   .titletext {
@@ -864,6 +890,7 @@ li:hover {
   .articles {
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 10%;
   }
 
   /*
@@ -880,22 +907,30 @@ li:hover {
   } */
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   .articles {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-top: -1%;
+    margin-left: 0%;
+    margin-right: 0%;
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
   .article {
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 15%;
   }
 
   .item {
     width: 100% !important;
     height: 14rem !important;
+  }
+
+  .articles {
+    margin-left: 5%;
+    margin-top: 12%;
+    margin-right: 5%;
   }
 
   .dog {
@@ -904,12 +939,6 @@ li:hover {
 
   .fth {
     display: none;
-  }
-
-  .articles {
-    margin-top: -1%;
-    margin-left: 0%;
-    margin-right: 0%;
   }
 
   /*
@@ -947,14 +976,15 @@ li:hover {
   }
 
   .smenu {
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
     text-align: center;
-    padding: 2rem;
-    position: absolute;
-    top: 55px;
+    paadding: 2rem;
+    position: fixed;
+    top: 3.5rem;
     right: -4%;
     width: 50%;
     transition: transform 0.5s ease-in-out;
@@ -988,7 +1018,6 @@ li:hover {
     color: white;
     padding-left: 0.5rem;
     left: 0% !important;
-    top: 55% !important;
     padding-right: 0.5rem;
   }
 
@@ -1043,4 +1072,91 @@ img {
 
 .image img {
   box-shadow: 3px 5px 4px 0rem rgba(0, 0, 0, 0.24);
+}
+
+.baseInput {
+  width: 100%;
+  display: block;
+  margin: auto;
+  margin-bottom: 1%;
+}
+
+.btnWidth100 {
+  width: 100%;
+}
+
+.formcont {
+  margin-bottom: 1%;
+  width: 100% !important;
+  text-align: right;
+  background-color: #fCFCFC !important;
+}
+
+.selCol {
+  background-color: #fCFCFC !important;
+  text-align: left !important;
+}
+
+.emSpan {
+  margin-right: 0.5% !important;
+}
+
+.navMainLink {
+  text-decoration: none;
+  color: white;
+  font-family: "Raleway";
+}
+
+.navbtn {
+  margin-left: 0.5% !important;
+}
+
+.MuiDrawer-paper {
+  toop: 6.34vh !important;
+  top: 7.38vh !important;
+}
+
+.highlight {
+  baox-shadow: inset 0 0 20px 20px #43af4194;
+  background: #f3f3f3 !important;
+}
+
+.highlight>.MuiListItemIcon-root {
+  color: #83c154;
+}
+
+.highlight:first-child {
+  margin-top: -6px;
+  padding-top: 14px;
+}
+
+.highlight:last-child {
+  margin-bottom: -6px;
+  padding-bottom: 14px;
+}
+
+.arrowBack {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  font-size: 50;
+}
+
+.arrowForward {
+  position: absolute;
+  right: 30%;
+  top: 50%;
+  font-size: 50;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin-top: 6.3vh !important;
+    max-height: 93.7vh;
+    min-height: 93.7vh;
+  }
+
+  .MuiDrawer-paper {
+    top: 6.363vh !important;
+  }
 }

@@ -33,3 +33,19 @@ export const blank = {
   3: "ecclesiae Dei quae est Corinthi sanctificatis in Christo Iesu vocatis sanctis cum omnibus qui invocant nomen Domini nostri Iesu Christi in omni loco ipsorum et nostro",
   4: "ecclesiae Dei quae est Corinthi sanctificatis in Christo Iesu vocatis sanctis cum omnibus qui invocant nomen Domini nostri Iesu Christi in omni loco ipsorum et nostro"
 };
+
+export const children = {
+  1: "W pakietach rodzinnych jest możliwość objęcia ubezpieczeniem dzieci. Nasze pociechy możemy ubezpieczyć na życie, od chorób krytycznych, na pobyt w szpitalu - na terenie Irlandii lub też na terenie całej Europy.",
+  2: "Należy również pamiętać, że ubezpieczając na życie siebie - zapewniamy dzieciom zabezpieczenie sytuacji finansowej w przypadku najgorszego, czyli sytuacji gdy im zabraknie jednego lub dwojga z rodziców."
+};
+
+export const house = {
+  1: "Kredyt hipoteczny - w celu zakupienia domu czy apartamentu - to marzenie wielu z nas.",
+  2: "Jednak by móc liczyć na finansowanie zakupu, trzeba spełnić wiele wymogów formalnych stosowanych przez banki. Jednym z nich jest oczywiście zapewnienie odpowiedniego zabezpieczenia spłaty zobowiązania w postaci polisy na życie kredytobiorcy."
+};
+
+export const life = {
+  1: "Ubezpieczenie na życie dedykowane jest każdemu kto chce zabezpieczyć finansowo swoich najbliższych przed następstwami ich przedwczesnej śmierci.",
+  2: "Świadczenie pieniężne w przypadku śmierci osoby ubezpieczonej - może być wypłacone: żonie, mężowi, partnerce, partnerowi lub dzieciom osoby ubezpieczonej, lub w dalszej kolejności rodzicom.",
+  3: "Suma świadczenia jest zawsze indywidualnie dopasowywana - w zależności od potrzeb i wymagań klienta."
+};
