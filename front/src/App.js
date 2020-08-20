@@ -8,7 +8,10 @@ import Nav from "./components/Nav";
 import useHamburger from "./hooks/useHamburger";
 import { useRoutes } from "hookrouter";
 import ArticleFunctional from "./containers/ArticleFunctional";
-import DrawerContainer from "./containers/DrawerContainer";
+import { PlaceContext } from "./contexts/PlaceContext";
+const DrawerContainer = React.lazy(() =>
+  import("./containers/DrawerContainer")
+);
 
 const routes = {
   "/": () => <Main />,
@@ -18,13 +21,22 @@ const routes = {
 };
 
 const App = () => {
+  const { place } = React.useContext(PlaceContext);
   const routeResult = useRoutes(routes);
-  const [state, showMenu] = useHamburger();
+
+  const [state, showMenu, closeMenu] = useHamburger();
+  let pach = place === "main" ? "limit" : "nolimit";
   return (
     <>
-      <Nav showMenu={showMenu} hamb={state.hamb} />
-      <DrawerContainer shown={state.shown} />
-      {routeResult}
+      <div className={pach}>
+        <Nav showMenu={showMenu} hamb={state.hamb} shown={state.shown} />
+        {state.shown && (
+          <React.Suspense fallback={<span></span>}>
+            <DrawerContainer closeMenu={closeMenu} shown={state.shown} />
+          </React.Suspense>
+        )}
+        {routeResult}
+      </div>
     </>
   );
 };

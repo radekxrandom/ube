@@ -7,7 +7,8 @@ import {
   blank,
   children,
   house,
-  life
+  life,
+  income
 } from "../articles/pl";
 import ArticlePresentational from "../components/ArticlePresentational";
 import { message } from "antd";
@@ -20,7 +21,7 @@ const articleEnum = {
   children: children,
   blank: blank,
   accidents: accidents,
-  income: blank,
+  income: income,
   retirement: retirement,
   house: house
 };

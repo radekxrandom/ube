@@ -544,7 +544,7 @@ textarea.form-control.is-invalid {
   font-family: "Raleway";
   line-height: 150%;
   foant-family: "Quicksand";
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 body {
@@ -625,7 +625,7 @@ body {
   top: 0;
 }
 
-#root {
+.limit {
   height: 100vh;
   overflow-y: hidden;
 }
@@ -778,7 +778,7 @@ li:hover {
   }
 
   .titletext {
-    font-size: 1.5rem !important;
+    font-size: 1.7rem !important;
   }
 }
 
@@ -862,7 +862,7 @@ li:hover {
     position: fixed !important;
   }
 
-  #root {
+  #root, .limit {
     overflow-y: auto;
     height: fit-content;
   }
@@ -991,9 +991,40 @@ li:hover {
     background-color: #3f51b5;
   }
 
+  .hamb {
+    transition-duration: 0.8s;
+    transition-property: all;
+  }
+
   /*49ca6a 5e9e4e 659e4e   */
-  .rot {
+  .hamb.rot {
+    animation: spin 600ms;
     transform: rotate(90deg);
+  }
+
+  .hamb.unrot {
+    animation: despin 600ms;
+    transform: rotate(360deg);
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+
+  @keyframes despin {
+    0% {
+      transform: rotate(90deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
   }
 
   .its {
@@ -1083,22 +1114,24 @@ img {
 
 .btnWidth100 {
   width: 100%;
+  margin-top: 1% !important;
 }
 
 .formcont {
   margin-bottom: 1%;
   width: 100% !important;
-  text-align: right;
+  text-align: left;
   background-color: #fCFCFC !important;
 }
 
 .selCol {
+  margin-bottom: 1%;
   background-color: #fCFCFC !important;
   text-align: left !important;
 }
 
 .emSpan {
-  margin-right: 0.5% !important;
+  display: block;
 }
 
 .navMainLink {
@@ -1159,4 +1192,17 @@ img {
   .MuiDrawer-paper {
     top: 6.363vh !important;
   }
+}
+
+.hamburgerWrapper {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-right: -2rem;
+}
+
+.MuiSvgIcon-root {
+  width: 2rem !important;
+  height: 2rem !important;
 }

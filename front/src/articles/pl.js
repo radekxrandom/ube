@@ -36,16 +36,27 @@ export const blank = {
 
 export const children = {
   1: "W pakietach rodzinnych jest możliwość objęcia ubezpieczeniem dzieci. Nasze pociechy możemy ubezpieczyć na życie, od chorób krytycznych, na pobyt w szpitalu - na terenie Irlandii lub też na terenie całej Europy.",
-  2: "Należy również pamiętać, że ubezpieczając na życie siebie - zapewniamy dzieciom zabezpieczenie sytuacji finansowej w przypadku najgorszego, czyli sytuacji gdy im zabraknie jednego lub dwojga z rodziców."
+  2: "Należy również pamiętać, że ubezpieczając na życie siebie - zapewniamy dzieciom zabezpieczenie sytuacji finansowej w przypadku najgorszego, czyli sytuacji gdy im zabraknie jednego lub dwojga z rodziców.",
+  3: ""
 };
 
 export const house = {
   1: "Kredyt hipoteczny - w celu zakupienia domu czy apartamentu - to marzenie wielu z nas.",
-  2: "Jednak by móc liczyć na finansowanie zakupu, trzeba spełnić wiele wymogów formalnych stosowanych przez banki. Jednym z nich jest oczywiście zapewnienie odpowiedniego zabezpieczenia spłaty zobowiązania w postaci polisy na życie kredytobiorcy."
+  2: "Jednak by móc liczyć na finansowanie zakupu, trzeba spełnić wiele wymogów formalnych stosowanych przez banki. Jednym z nich jest oczywiście zapewnienie odpowiedniego zabezpieczenia spłaty zobowiązania w postaci polisy na życie kredytobiorcy.",
+  3: "Ubezpieczenie kredytu hipotecznego (Mortgage Protection) to zapewnienie bankowi rekompensaty w razie niemożności spłaty kredytu przez kredytobiorcę w przypadku śmierci lub innych nieprzewidzianych okoliczności objętych ubezpieczeniem.",
+  4: "Owe zabezpieczenie ma zapewnić bankom nie tylko płynność finansową, lecz także wypłacalność i stabilną pozycję na rynku, dlatego też warto zadbać szybciej o założenie polisy ubezpieczeniowej aby później nie przedłużać procedur bankowych i nie opóźniać zakupu wymarzonego domu.",
+  5: "Ubezpieczenie Mortgage Protection można zawrzeć w zakresie podstawowym obejmującym ochronę w razie śmierci, lub w zakresie rozszerzonym o ochronę w przypadku wystąpienia jednej z chorób krytycznych lub/oraz z rozszerzeniem o benefity chroniące dochód ubezpieczonej osoby tj. zabezpieczeniem na pobyt w szpitalu i w razie utraty dochodu na skutek nieszczęśliwego wypadku.",
+  6: "Czas trwania polisy równy jest czasowi spłaty kredytu, a kwota ubezpieczenia na życie jest  dopasowywana do kwoty udzielonego kredytu na zakup domu /apartamentu  i wypłacana bankowi w razie śmierci osoby biorącej kredyt - co jednoczesnym zabezpiecza rodzinę zmarłego kredytobiorcy w zachowaniu praw własności domu objętego hipoteką."
 };
 
 export const life = {
   1: "Ubezpieczenie na życie dedykowane jest każdemu kto chce zabezpieczyć finansowo swoich najbliższych przed następstwami ich przedwczesnej śmierci.",
   2: "Świadczenie pieniężne w przypadku śmierci osoby ubezpieczonej - może być wypłacone: żonie, mężowi, partnerce, partnerowi lub dzieciom osoby ubezpieczonej, lub w dalszej kolejności rodzicom.",
   3: "Suma świadczenia jest zawsze indywidualnie dopasowywana - w zależności od potrzeb i wymagań klienta."
+};
+
+export const income = {
+  1: "Ubezpieczenie dochodu zwane w Irlandii Income Protection  zapewnia comiesięczną wypłatę ubezpieczonym osobom w przypadku gdy długotrwała choroba lub doznane obrażenia na skutek nieszczęśliwego wypadku spowodują im utratę zdolności do wykonywanej pracy. Wypłaty są możliwe w zależności od wykupionej karencji - najwcześniej po 4 tygodniach od zdarzenia i będą kontynuowane do momentu, gdy osoba objęta ubezpieczeniem odzyska zdolność do pracy lub - jeżeli nie będzie to możliwe - do osiągnięcia wieku emerytalnego.",
+  2: "Zabezpieczenie to  jest polecane osobom świadomym, iż świadczenie socjalne nie spełni ich potrzeb finansowych w razie w/w nieszczęść, a także osobom samozatrudnionym w Irlandii, ponieważ te osoby niestety bardzo często nie mogą liczyć  na żadne świadczenie socjalne.",
+  3: "Wykup tego ubezpieczenia jest bardzo dobrym i często stosowanym rozwiązaniem przez osoby samozatrudnione (self-employed) ze względu na możliwości odpisania składek ubezpieczenia od opodatkowanego dochodu."
 };

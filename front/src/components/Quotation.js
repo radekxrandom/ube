@@ -5,11 +5,29 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { makeStyles } from "@material-ui/core/styles";
 import useInputHandler from "../hooks/useInputHandler";
 import useFormSubmit from "../hooks/useFormSubmit";
 import usePlace from "../hooks/usePlace";
 
+const useStyles = makeStyles(() => ({
+  pTitle: {
+    marginTop: "-1%",
+    marginbBottom: "-1%"
+  },
+  textF: {
+    width: "100%",
+    display: "block",
+    margin: "auto",
+    marginBottom: "1%"
+  },
+  sel: {
+    backgroundColor: "#FCFCFC !important"
+  }
+}));
+
 const QuotationStupid = props => {
+  const classes = useStyles();
   usePlace("quotation");
   const [state, handleInput, err, setErr] = useInputHandler({
     name: "",
@@ -27,43 +45,28 @@ const QuotationStupid = props => {
   return (
     <>
       <div className="article">
-        <div className="contform" style={{ marginTop: "5%" }}>
+        <div className="contform">
           <div className="contInfo">
-            <h1>Uzyskaj wycene</h1>
+            <h1>Uzyskaj wycenę</h1>
             <div className="inf">
-              <p style={{ marginTop: "-1%", marginBottom: "-1%" }}>
-                Wypelnij formularz,
-              </p>
-              <p>a skontaktuje sie z toba i podam ci wycene.</p>
+              <p classNames={classes.pTitle}>Wypełnij formularz,</p>
+              <p>a skontaktujemy się z Tobą w sprawie wyceny</p>
             </div>
           </div>
           <div className="mess">
             <form onSubmit={submit} noValidate>
               <TextField
-                style={{
-                  width: "100%",
-                  display: "block",
-                  margin: "auto",
-                  marginBottom: "1%"
-                }}
+                classNames={classes.textF}
                 variant="outlined"
                 margin="normal"
-                required
                 fullWidth
                 id="name"
-                label="Imie"
+                label="Imię"
                 name="name"
                 onChange={handleInput}
-                autoComplete="name"
-                autoFocus
               />
               <TextField
-                style={{
-                  width: "100%",
-                  display: "block",
-                  margin: "auto",
-                  marginBottom: "1%"
-                }}
+                classNames={classes.textF}
                 variant="outlined"
                 margin="normal"
                 required
@@ -73,17 +76,11 @@ const QuotationStupid = props => {
                 name="phone"
                 onChange={handleInput}
                 autoComplete="phone"
-                autoFocus
                 error={err.phone}
                 helperText={err.phone ? err.phone : ""}
               />
               <TextField
-                style={{
-                  width: "100%",
-                  display: "block",
-                  margin: "auto",
-                  marginBottom: "1%"
-                }}
+                classNames={classes.textF}
                 variant="outlined"
                 margin="normal"
                 required
@@ -93,97 +90,48 @@ const QuotationStupid = props => {
                 name="email"
                 onChange={handleInput}
                 autoComplete="email"
-                autoFocus
                 error={err.email}
                 helperText={err.email ? err.email : ""}
               />
               <TextField
-                style={{
-                  width: "100%",
-                  display: "block",
-                  margin: "auto",
-                  marginBottom: "1%"
-                }}
+                classNames={classes.textF}
                 variant="outlined"
                 margin="normal"
-                required
                 fullWidth
                 id="age"
                 label="Wiek"
                 name="age"
                 onChange={handleInput}
-                autoComplete="age"
-                autoFocus
                 error={err.age}
                 helperText={err.age ? err.age : ""}
               />
               <TextField
-                style={{
-                  width: "100%",
-                  display: "block",
-                  margin: "auto",
-                  marginBottom: "1%"
-                }}
+                classNames={classes.textF}
                 variant="outlined"
                 margin="normal"
-                required
                 fullWidth
                 id="zawod"
-                label="Zawod"
+                label="Zawód"
                 name="zawod"
                 onChange={handleInput}
-                autoComplete="email"
-                autoFocus
               />
-              <FormControl
-                variant="outlined"
-                className="formcont"
-                style={{
-                  marginBottom: "1%",
-                  width: "100%",
-                  textAlign: "right",
-                  backgroundColor: "#FCFCFC !important"
-                }}
-              >
-                <InputLabel id="demo-simple-select-outlined-label">
-                  Chorujesz na cos
-                </InputLabel>
-                <Select
-                  style={{ backgroundColor: "#FCFCFC !important" }}
-                  labelId="demo-simple-select-outlined-label"
-                  id="demo-simple-select-outlined"
-                  name="choroba"
-                  onChange={handleInput}
-                  labelWidth="30%"
-                >
-                  <MenuItem value="tak">Tak</MenuItem>
-                  <MenuItem value={"nie"}>Nie</MenuItem>
-                </Select>
-              </FormControl>
-              <br />
-              <FormControl
-                variant="outlined"
-                className="formcont"
-                style={{
-                  marginBottom: "1%",
-                  width: "100%",
-                  textAlign: "right",
-                  backgroundColor: "#FCFCFC !important"
-                }}
-              >
+              <FormControl variant="outlined" className="formcont">
                 <InputLabel id="demo-simple-select-outlined-label">
                   Czy palisz papierosy?
                 </InputLabel>
                 <Select
-                  style={{ backgroundColor: "#FCFCFC !important" }}
+                  className="selCol"
                   labelId="demo-simple-select-outlined-label"
                   id="demo-simple-select-outlined"
                   name="papierosy"
                   onChange={handleInput}
                   labelWidth="30%"
                 >
+                  <MenuItem value="none">
+                    <em>Wole nie odpowiadać</em>
+                  </MenuItem>
                   <MenuItem value="tak">Tak</MenuItem>
-                  <MenuItem value={"nie"}>Nie</MenuItem>
+                  <MenuItem value="nie">Nie</MenuItem>
                 </Select>
               </FormControl>
 
@@ -191,12 +139,7 @@ const QuotationStupid = props => {
                 id="outlined-multiline-static"
                 label="Message"
                 name="mes"
-                style={{
-                  width: "100%",
-                  display: "block",
-                  margin: "auto",
-                  marginBottom: "1%"
-                }}
+                classNames={classes.textF}
                 multiline
                 rows="7"
                 fullWidth
@@ -208,7 +151,7 @@ const QuotationStupid = props => {
                 type="submit"
                 variant="outlined"
                 color="primary"
-                style={{ width: "100%" }}
+                className="btnWidth100"
               >
                 Wyslij
               </Button>

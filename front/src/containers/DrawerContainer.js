@@ -9,6 +9,7 @@ import MailIcon from "@material-ui/icons/Mail";
 import BookIcon from "@material-ui/icons/Book";
 import { PlaceContext } from "../contexts/PlaceContext";
 import DrawerDefaultItem from "../components/DrawerDefaultItem";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -100,63 +101,65 @@ const DrawerComponent = React.memo(props => {
     "accidents"
   ];
   return (
-    <Drawer
-      className={classes.drawer}
-      variant="persistent"
-      anchor="right"
-      open={props.shown}
-      classes={{
-        paper: classes.drawerPaper
-      }}
-    >
-      <List>
-        <DrawerDefaultItem
-          href="/"
-          name="Navigation"
-          isHighlighted={location.main}
-        >
-          <NavigationIcon />
-        </DrawerDefaultItem>
-      </List>
-      <Divider />
-      <List>
-        <DrawerDefaultItem
-          href="/contact"
-          name="Contact"
-          isHighlighted={location.contact}
-        >
-          <MailIcon />
-        </DrawerDefaultItem>
-        <DrawerDefaultItem
-          href="/quotation"
-          name="Quotation"
-          isHighlighted={location.quotation}
-        >
-          <EuroIcon />
-        </DrawerDefaultItem>
-      </List>
-      <Divider />
-      <List>
-        {[
-          "Ubezpieczenie na zycie",
-          "Ubezpieczenie od chorob",
-          "Ubezpieczenie dzieci",
-          "Zabezpieczenie kredytu na dom",
-          "Ubezpieczenie pobytu w szpitalu",
-          "Ubezpieczenie dochodu",
-          "Prywatna emerytura",
-          "Ubezpieczenie wypadkowe"
-        ].map((text, index) => (
+    <ClickAwayListener onClickAway={props.closeMenu}>
+      <Drawer
+        className={classes.drawer}
+        variant="persistent"
+        anchor="right"
+        open={props.shown}
+        classes={{
+          paper: classes.drawerPaper
+        }}
+      >
+        <List>
           <DrawerDefaultItem
-            href={`/article/${articles[index]}`}
-            name={text}
-            isHighlighted={location[articles[index]]}
+            href="/"
+            name="Navigation"
+            isHighlighted={location.main}
           >
-            <BookIcon />
+            <NavigationIcon />
           </DrawerDefaultItem>
-        ))}
-      </List>
-    </Drawer>
+        </List>
+        <Divider />
+        <List>
+          <DrawerDefaultItem
+            href="/contact"
+            name="Contact"
+            isHighlighted={location.contact}
+          >
+            <MailIcon />
+          </DrawerDefaultItem>
+          <DrawerDefaultItem
+            href="/quotation"
+            name="Quotation"
+            isHighlighted={location.quotation}
+          >
+            <EuroIcon />
+          </DrawerDefaultItem>
+        </List>
+        <Divider />
+        <List>
+          {[
+            "Ubezpieczenie na zycie",
+            "Ubezpieczenie od chorob",
+            "Ubezpieczenie dzieci",
+            "Zabezpieczenie kredytu na dom",
+            "Ubezpieczenie pobytu w szpitalu",
+            "Ubezpieczenie dochodu",
+            "Prywatna emerytura",
+            "Ubezpieczenie wypadkowe"
+          ].map((text, index) => (
+            <DrawerDefaultItem
+              href={`/article/${articles[index]}`}
+              name={text}
+              isHighlighted={location[articles[index]]}
+            >
+              <BookIcon />
+            </DrawerDefaultItem>
+          ))}
+        </List>
+      </Drawer>
+    </ClickAwayListener>
   );
 });
 

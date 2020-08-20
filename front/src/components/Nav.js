@@ -30,7 +30,6 @@ const Nav = props => {
               Ubezpiecz zycie w Irlandii
             </A>
           </Typography>
-
           <Button
             {...setLinkProps(quotationHref)}
             className="bts emSpan"
@@ -45,7 +44,9 @@ const Nav = props => {
           >
             Kontakt
           </Button>
-          <MenuIcon className={props.hamb} onClick={props.showMenu} />
+          <span className="hamburgerWrapper" onClick={props.showMenu}>
+            <MenuIcon className={props.hamb} />
+          </span>
         </Toolbar>
       </AppBar>
     </>

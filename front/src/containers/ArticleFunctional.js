@@ -7,7 +7,8 @@ import {
   blank,
   children,
   house,
-  life
+  life,
+  income
 } from "../articles/pl";
 import ArticlePresentational from "../components/ArticlePresentational";
 import { message } from "antd";
@@ -21,7 +22,7 @@ const articleEnum = {
   children: children,
   blank: blank,
   accidents: accidents,
-  income: blank,
+  income: income,
   retirement: retirement,
   house: house
 };
@@ -39,8 +40,8 @@ const imgEnum = {
 };
 
 const titleEnum = {
-  life: "Ubezpieczenie na zycie",
-  health: "Ubezpieczenie od chorob",
+  life: "Ubezpieczenie na życie",
+  health: "Ubezpieczenie od chorób",
   hospital: "Ubezpieczenie pobytu w szpitalu",
   children: "Ubezpieczenie dzieci",
   blank: null,

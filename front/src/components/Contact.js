@@ -26,11 +26,11 @@ const ContactStupid = React.memo(props => {
       <div className="article">
         <div className="contform">
           <div className="contInfo">
-            <h1>Skontaktuj sie ze mna</h1>
-            <h3>Imie Nazwisko</h3>
+            <h1>Skontaktuj się ze mną</h1>
+            <h3>Imię Nazwisko</h3>
             <div className="inf">
-              <span className="emSpan">email@email.com</span>
-              <span>123456701</span>
+              <span className="emSpan">grazyna@rafrom.com</span>
+              <span>089 456 4400</span>
             </div>
           </div>
           <div className="mess">
@@ -39,14 +39,11 @@ const ContactStupid = React.memo(props => {
                 className="baseInput"
                 variant="outlined"
                 margin="normal"
-                required
                 fullWidth
                 id="name"
-                label="Imie"
+                label="Imię"
                 name="name"
                 onChange={handleInput}
-                autoComplete="name"
-                autoFocus
               />
               <TextField
                 className="baseInput"
@@ -59,7 +56,6 @@ const ContactStupid = React.memo(props => {
                 name="phone"
                 onChange={handleInput}
                 autoComplete="phone"
-                autoFocus
                 error={err.phone}
                 helperText={err.phone ? err.phone : ""}
               />
@@ -74,7 +70,6 @@ const ContactStupid = React.memo(props => {
                 name="email"
                 onChange={handleInput}
                 autoComplete="email"
-                autoFocus
                 error={err.email}
                 helperText={err.email ? err.email : ""}
               />
@@ -99,22 +94,8 @@ const ContactStupid = React.memo(props => {
                 </Select>
               </FormControl>
               <TextField
-                className="baseInput"
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="title"
-                label="Title"
-                name="title"
-                onChange={handleInput}
-                autoComplete="email"
-                autoFocus
-              />
-
-              <TextField
                 id="outlined-multiline-static"
-                label="Message"
+                label="Tu możesz wpisać dodatkowe informacje"
                 name="mes"
                 className="baseInput"
                 multiline
@@ -130,7 +111,7 @@ const ContactStupid = React.memo(props => {
                 color="primary"
                 className="btnWidth100"
               >
-                Wyslij
+                Wyślij
               </Button>
             </form>
           </div>
