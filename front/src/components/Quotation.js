@@ -137,7 +137,7 @@ const QuotationStupid = props => {
 
               <TextField
                 id="outlined-multiline-static"
-                label="Message"
+                label="Tu możesz wpisać dodatkowe informacje"
                 name="mes"
                 classNames={classes.textF}
                 multiline
@@ -153,7 +153,7 @@ const QuotationStupid = props => {
                 color="primary"
                 className="btnWidth100"
               >
-                Wyslij
+                Wyślij
               </Button>
             </form>
           </div>

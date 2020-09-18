@@ -86,7 +86,7 @@ const ContactStupid = React.memo(props => {
                   labelWidth="30%"
                 >
                   <MenuItem value="none">
-                    <em>Obojetnie</em>
+                    <em>Obojętnie</em>
                   </MenuItem>
                   <MenuItem value="email">Email</MenuItem>
                   <MenuItem value="tel">Telefon</MenuItem>
